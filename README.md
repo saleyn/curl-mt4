@@ -5,6 +5,9 @@ MetaTrader (MT4) and libcurl.dll.
 
 It's intended for 32-bit builds by Visual Studio C++ IDE.
 
+In this repository the main project is `curl-mt4` whereas the
+other projects are meant for testing purposes.
+
 ## Prerequisites ##
 
 1. Obtain and build the `libcurl.dll` using Visual Studio.
