@@ -19,7 +19,7 @@ It's intended for 32-bit builds by Visual Studio C++ IDE.
 1. Place `libcurl.dll` and `curl-mt4.dll` files in the `Libraries` directory
    of your MT4 instance.
 2. Place `inet-curl.mqh` in the `Include` directory of your MT4 instance.
-3. Add `#include &lt;inet-curl.mqh&gt;` in the source code of your scripts/indicators/EAs
+3. Add `#include <inet-curl.mqh>` in the source code of your scripts/indicators/EAs
    that you intend to call `curl-mt4`'s functions.
 
 ## AUTHOR ##
