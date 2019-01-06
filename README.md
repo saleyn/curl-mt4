@@ -16,7 +16,7 @@ It's intended for 32-bit builds by Visual Studio C++ IDE.
 
 ## AUTHOR ##
 
-Serge Aleynikov <saleyn at gmail dot com>
+Serge Aleynikov &lt;saleyn at gmail dot com&gt;
 
 ## LICENSE ##
 
