@@ -1,7 +1,8 @@
 # CURL interface API for MT4 #
 
 This library is used as the intermediate marshaling layer between
-MetaTrader (MT4) and libcurl.dll.
+[MetaTrader](https://www.metatrader4.com/en/download) (MT4)
+and [libcurl.dll](https://curl.haxx.se/libcurl).
 
 It's intended for 32-bit builds by Visual Studio C++ IDE.
 
