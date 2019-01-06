@@ -14,6 +14,10 @@ It's intended for 32-bit builds by Visual Studio C++ IDE.
    [runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
    installed on computers running libcurl.
 
+## AUTHOR ##
+
+Serge Aleynikov <saleyn at gmail dot com>
+
 ## LICENSE ##
 
 The project is released under APACHE 2.0 license.
