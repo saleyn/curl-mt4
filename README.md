@@ -10,7 +10,7 @@ other projects are meant for testing purposes.
 
 ## Prerequisites ##
 
-1. Obtain the [libcurl](https://curl.haxx.se/libcurl)
+1. Download the [libcurl](https://curl.haxx.se/libcurl) project
    and build `libcurl.dll` using recent version of Visual Studio.
 2. Update project library to include directories of the
    libcurl's `include` and `library` paths.
