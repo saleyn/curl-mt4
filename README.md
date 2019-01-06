@@ -6,8 +6,9 @@ and [libcurl.dll](https://curl.haxx.se/libcurl).
 
 It's intended for 32-bit builds by Visual Studio C++ IDE.
 
-In this repository the main project is `curl-mt4` whereas the
-other projects are meant for testing purposes.
+In this repository the main project is
+[curl-mt4](https://github.com/saleyn/curl-mt4/tree/master/curl-mt4)
+whereas the other projects are meant for testing purposes.
 
 ## Prerequisites ##
 
