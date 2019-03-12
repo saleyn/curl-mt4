@@ -39,7 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="curl-mt4.cpp" />
-    <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -187,6 +186,12 @@
       <AdditionalLibraryDirectories>D:\lib\curl-7.62.0\build\Win32\VC15\DLL Release - DLL Windows SSPI;</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(TargetDir)$(TargetName).dll" "C:\Users\serge\AppData\Roaming\MetaQuotes\Terminal\9257A1AD38459338C385CE3A33B41AD8\MQL4\Libraries\$(TargetName).dll" &amp;set errorlevel=0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy $(TargetName).dll to MQL4/Libraries folder</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <ClCompile>
@@ -205,6 +210,12 @@
       <AdditionalLibraryDirectories>D:\lib\curl-7.64.0\build\Win32\VC15\DLL Debug - DLL Windows SSPI</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcurld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(TargetDir)$(TargetName).dll" "C:\Users\serge\AppData\Roaming\MetaQuotes\Terminal\9257A1AD38459338C385CE3A33B41AD8\MQL4\Libraries\$(TargetName).dll" &amp;set errorlevel=0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy $(TargetName).dll to MQL4/Libraries folder</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug LIB|x64'">
     <ClCompile>
@@ -260,6 +271,12 @@
       <AdditionalDependencies>libcurl.lib;ws2_32.lib;crypt32.lib;kernel32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\lib\curl-7.64.0\build\Win32\VC15\LIB Release - DLL Windows SSPI</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(TargetDir)$(TargetName).dll" "C:\Users\serge\AppData\Roaming\MetaQuotes\Terminal\9257A1AD38459338C385CE3A33B41AD8\MQL4\Libraries\$(TargetName).dll" &amp;set errorlevel=0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy $(TargetName).dll to MQL4/Libraries folder</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
     <ClCompile>
@@ -281,6 +298,12 @@
       <AdditionalLibraryDirectories>D:\lib\curl-7.64.0\build\Win32\VC15\DLL Release - DLL Windows SSPI</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcurl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(TargetDir)$(TargetName).dll" "C:\Users\serge\AppData\Roaming\MetaQuotes\Terminal\9257A1AD38459338C385CE3A33B41AD8\MQL4\Libraries\$(TargetName).dll" &amp;set errorlevel=0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy $(TargetName).dll to MQL4/Libraries folder</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release LIB|x64'">
     <ClCompile>
@@ -298,6 +321,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(TargetDir)$(TargetName).dll" "C:\Users\serge\AppData\Roaming\MetaQuotes\Terminal\9257A1AD38459338C385CE3A33B41AD8\MQL4\Libraries\$(TargetName).dll" &amp;set errorlevel=0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy $(TargetName).dll to MQL4/Libraries folder</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
     <ClCompile>

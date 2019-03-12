@@ -19,11 +19,13 @@ extern "C" {
     enum CurlOptions {
         OPT_NONE             = 0, 
         OPT_FOLLOW_REDIRECTS = 1 << 0,
-        OPT_DEBUG            = 1 << 1,
+        CURL_OPT_NOBODY      = 1 << 1, // Download no body
+        OPT_DEBUG            = 1 << 2,
     };
 
     enum CurlMethod : int {
         GET,
+        POST,
         POST_JSON,
         POST_FORM,
         DEL,
@@ -53,12 +55,19 @@ extern "C" {
     /// @param post_data  request body for POST requests
     MT4EXPORT int        __stdcall CurlExecute    (CurlHandle handle, int* code, int* res_length,
                                                    CurlMethod method=GET,
-                                                   uint opts=uint(OPT_NONE), const char* post_data=nullptr);
+                                                   uint opts=uint(OPT_NONE), const char* post_data=nullptr,
+                                                   int timeout_secs=10);
     /// Return response body length
     MT4EXPORT int        __stdcall CurlGetDataSize(CurlHandle handle);
     /// Return response data, where `buf` size must be pre-allocated to `res_length`
     /// returned by `CurlExecute()`
     MT4EXPORT int        __stdcall CurlGetData    (CurlHandle handle, char* buf, int size);
+    /// Get count of response headers
+    MT4EXPORT size_t    __stdcall  CurlTotRespHeaders(CurlHandle handle);
+    /// Get `idx`th response header.
+    /// If the header's length is greater than `buflen`, the function doesn't update `buf`.
+    /// Return the actual length of the header or -1 if `idx` is invalid.
+    MT4EXPORT int        __stdcall CurlGetRespHeader(void* handle, int idx, char* key, size_t buflen);
     /// Get description of the `err` code
     MT4EXPORT int        __stdcall CurlLastError  (CurlHandle handle, int err, char* errs, int max_size);
     /// Set debug level
@@ -75,6 +84,11 @@ extern "C" {
     MT4EXPORT void       __stdcall CurlAddHeadersW(CurlHandle handle, const wchar_t* headers);
     /// Add a single request header
     MT4EXPORT void       __stdcall CurlAddHeaderW (CurlHandle handle, const wchar_t* header);
+    /// Get `idx`th response header.
+    /// If the header's length is greater than `buflen`, the function doesn't update `buf`.
+    /// Return the actual length of the header or -1 if `idx` is invalid.
+    MT4EXPORT int       __stdcall CurlGetRespHeaderW(CurlHandle handle, int idx, wchar_t* buf, size_t buflen);
+
     /// Execute a request on the server
     /// @param code       resulting code (optional if passed nullptr) returned by the server (200 = success)
     /// @param res_length resulting response body length (optional if passed nullptr)
@@ -82,7 +96,8 @@ extern "C" {
     /// @param post_data  request body for POST requests
     MT4EXPORT int        __stdcall CurlExecuteW   (CurlHandle handle, int* code, int* res_length,
                                                    CurlMethod method = GET,
-                                                   unsigned int opts = 0, const wchar_t* post_data = nullptr);
+                                                   unsigned int opts = 0, const wchar_t* post_data = nullptr,
+                                                   int  timeout_secs = 10);
     /// Return response data, where `buf` size must be pre-allocated to `res_length` returned by `CurlExecute()`
     MT4EXPORT int        __stdcall CurlGetDataW   (CurlHandle handle, wchar_t* buf, int size);
     /// Get description of the `err` code
